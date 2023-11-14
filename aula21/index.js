@@ -1,5 +1,5 @@
-/* Primitivos (imutáveis, não podemos mudar eles) - string, number, boolean, underfined, null, bigint, symbol */
+/* Primitivos (imutáveis, não podemos mudar eles) - string, number, boolean, underfined, null, bigint, symbol - Valores Copiados quando utilizar o sinal " = "
 
-let nome = 'Gabriel';
+referência (mutável) - arrey, object, function - passados por referência.
 
-console.log(nome[0]);
+*/
