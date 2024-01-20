@@ -1,5 +1,3 @@
-const res = document.getElementById(`res`);
-
 // array com objetos dentro..
 const elementos = [
 {tag: 'p', texto: 'Um texto qualquer' },
