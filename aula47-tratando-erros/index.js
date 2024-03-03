@@ -27,6 +27,8 @@ try {
 
    console.log(error);
 
-}
+} finally {
+    console.log('Finally, eu sou sempre executado. ');
+} // ele vai executar dando erro ou não.
 
 
