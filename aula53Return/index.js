@@ -23,7 +23,7 @@ const duplica = criaMultiplicador(3);
 const triplica = criaMultiplicador(2);
 const quadriplica = criaMultiplicador(10);
 
-console.log(duplica(3));
-console.log(triplica(2));
-console.log(quadriplica(10));
+console.log(duplica(2));
+console.log(triplica(3));
+console.log(quadriplica(4));
 
