@@ -1,4 +1,4 @@
-// for Each só está disponivel dentro de arrays.
+// for Each está disponivel dentro de arrays.
 
 const a1 = [10, 20, 30, 40, 50, 60, 70, 80, 90];
 
