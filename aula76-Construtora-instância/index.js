@@ -1,4 +1,4 @@
-// construtora => molde (classe) esse é uma Função v logo abaixo.
+// construtora => molde (classe) essa é uma Função v.
 
 function Pessoa(nome, sobreNome) {
     this.nome = nome;
@@ -8,7 +8,7 @@ function Pessoa(nome, sobreNome) {
 
 }
 
-// instância são os Objetos que vem dessa função v logo abaixo.
+// instância são os Objetos que vem da função v.
 
 const pessoa1 = new Pessoa('luiz', 'O.'); // < = Pessoa = função construtora.
 const pessoa2 = new Pessoa('Maria', 'A.'); // < = Pessoa = função construtora.
