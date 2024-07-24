@@ -18,7 +18,7 @@ function ValidaCPF(cpfEnviado) {
 
 ValidaCPF.prototype.valida = function() {
     if(typeof this.cpfLimpo === 'undefined') return false; // se o CPF der não for enviado retornará false.
-    if(this.cpfLimpo.length !== 11 ) return false; // se os números forem diferentes de 11 dará false.
+    if(this.cpfLimpo.length !== 11 ) return false; // se não tiver 11 números dará false.
 
     if(this.isSequencia()) return false;
 
