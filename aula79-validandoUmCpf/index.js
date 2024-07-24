@@ -1,10 +1,71 @@
-// serão usados os seguintes códigos
 
-let cpf = '705.484.450-52';
-let cpfLimpo = cpf.replace(/\D+/g, ''); // tudo que não for um número será substituido por nada, os pontos e hífen serão retirados e os números se juntarão porém, continua sendo uma string.
-cpfArray = Array.from(cpfLimpo); // converter string para array para poder utilizar reduce, map e etc..
+function ValidaCPF(cpfEnviado) {
 
-console.log(cpfArray.reduce((ac, val) => ac + Number(val), 0)); // conversão string para number.
+    Object.defineProperty(this, 'cpfLimpo', {
+        enumerable: true,
+        get: function() {
+            
+            return cpfEnviado.replace(/\D+/g, ''); // remove espaços do cpf
+
+        }
+
+
+
+
+    });
+
+}
+
+ValidaCPF.prototype.valida = function() {
+    if(typeof this.cpfLimpo === 'undefined') return false; // se o CPF der não for enviado retornará false.
+    if(this.cpfLimpo.length !== 11 ) return false; // se os números forem diferentes de 11 dará false.
+
+    if(this.isSequencia()) return false;
+
+    const cpfParcial = this.cpfLimpo.slice(0, -2);
+    const digito1 = this.criaDigito(cpfParcial);
+    const digito2 = this.criaDigito(cpfParcial + digito1);
+
+    const novoCpf = cpfParcial + digito1 + digito2;
+
+    return novoCpf === this.cpfLimpo;
+};
+
+ValidaCPF.prototype.criaDigito = function(cpfParcial) {
+    const cpfArray = Array.from(cpfParcial);
+    
+    let regressivo = cpfArray.length + 1;
+    const total = cpfArray.reduce((ac, val) => {
+        
+        ac += (regressivo * Number(val));
+        regressivo--;
+        return ac;
+
+    }, 0);
+
+    const digito = 11 - (total % 11);
+
+    return digito > 9 ? '0' : String(digito);
+
+};
+
+ValidaCPF.prototype.isSequencia = function() {
+    const sequencia = this.cpfLimpo[0].repeat(this.cpfLimpo.length);
+
+    return sequencia === this.cpfLimpo;
+};
+
+
+const cpf = new ValidaCPF('705.484.450-52');
+
+if(cpf.valida()) {
+    console.log('cpf Válido');
+    
+} else {
+    console.log('Cpf Inválido');
+
+}
+
 
 
 
