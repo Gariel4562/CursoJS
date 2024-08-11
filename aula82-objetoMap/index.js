@@ -12,8 +12,8 @@ for(const pessoa of pessoas) {
 
 }
 
-novasPessoas.delete(2);
+novasPessoas.delete(2); // Deleta uma pessoa
 
-console.log(novasPessoas); // Deleta uma pessoa
+console.log(novasPessoas); 
 
 console.log(novasPessoas.get(2)); // não mostrará a pessoa dois pois, deletei ela.
